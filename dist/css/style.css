@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+/* Обнуление стилей */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  /* Установка box-sizing для всех элементов */
+}
+
+/* Убираем обводку у элементов при фокусе */
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+  /* Убираем обводку у ссылок при фокусе */
+}
+
+/* Блочные элементы */
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+/* Основные стили для html и body */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  /* Базовый размер шрифта */
+  line-height: 1;
+  /* Междустрочный интервал */
+  -ms-text-size-adjust: 100%;
+  /* Для Internet Explorer */
+  -moz-text-size-adjust: 100%;
+  /* Для Firefox */
+  -webkit-text-size-adjust: 100%;
+  /* Для Safari */
+}
+
+/* Стили для форм */
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  /* Унаследовать шрифт */
+}
+
+/* Убираем крестик в input для IE */
+
+input::-ms-clear {
+  display: none;
+}
+
+/* Кнопки */
+
+button {
+  cursor: pointer;
+  /* Курсор в виде указателя */
+}
+
+/* Убираем стиль фокуса у кнопок */
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* Стили для ссылок */
+
+a,
+a:visited {
+  text-decoration: none;
+  /* Убираем подчеркивание у ссылок */
+}
+
+a:hover {
+  text-decoration: none;
+  /* Убираем подчеркивание при наведении */
+}
+
+/* Стили для списков */
+
+ul li {
+  list-style: none;
+  /* Убираем маркеры у списков */
+}
+
+/* Стили для изображений */
+
+img {
+  vertical-align: top;
+  /* Выравнивание изображений по верхнему краю */
+}
+
+/* Заголовки */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  /* Унаследовать размер шрифта */
+  font-weight: inherit;
+  /* Унаследовать толщину шрифта */
+}
+
+body {
+  font-size: 30px;
+}

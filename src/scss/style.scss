@@ -1,0 +1,11 @@
+@import "fonts" ;
+@import "reset";
+
+//---------------------------------------------------------------------------------------------------
+// Settings for font
+
+$fontsize: 30px; 
+
+body{
+font-size: $fontsize;
+}

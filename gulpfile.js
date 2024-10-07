@@ -1,69 +1,61 @@
-import gulp from 'gulp';
-import clean from 'gulp-clean';
-import sass from 'gulp-sass';
-import * as sassCompiler from 'sass';
-import concat from 'gulp-concat';
-import terser from 'gulp-terser'; // Используем gulp-terser для минификации
-import browserSync from 'browser-sync';
-import autoprefixer from 'gulp-autoprefixer';
+// Main module
+import gulp from "gulp";
+// Import paths
+import { path } from "./gulp/config/path.js";
+//Import common plugins
+import { plugins } from "./gulp/config/plugins.js";
 
-const scss = sass(sassCompiler);
 
-// Функция для очистки каталога dist
-function cleanDist() {
-	return gulp.src('dist/*', { read: false, allowEmpty: true }) // Очищаем содержимое dist
-		.pipe(clean());
+// Transfer data to a global variable
+
+global.app = {
+	isBuild: process.argv.includes('--build'),
+	isDev: !process.argv.includes('--build'),
+	path: path,
+	gulp: gulp,
+	plugins: plugins
 }
 
-// Функция для обработки скриптов
-function scripts() {
-	return gulp.src(['app/js/main.js'])
-		.pipe(concat('main.min.js'))
-		.pipe(terser()) // Используем terser для минификации
-		.pipe(gulp.dest('app/js'))
-		.pipe(browserSync.stream());
-}
+// Import Tasks
+import { copy } from "./gulp/tasks/copy.js";
+import { reset } from "./gulp/tasks/reset.js";
+import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { scss } from "./gulp/tasks/scss.js";
+import { js } from "./gulp/tasks/js.js";
+import { images } from "./gulp/tasks/images.js";
+import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
+import { svgSprive } from "./gulp/tasks/svgSprive.js";
 
-// Функция для обработки стилей
-function styles() {
-	return gulp.src(['app/scss/reset.scss', 'app/scss/style.scss']) // Здесь добавляем reset.scss
-		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'] }))
-		.pipe(concat('style.min.css'))
-		.pipe(scss({ outputStyle: 'compressed' }))
-		.pipe(gulp.dest('app/css'))
-		.pipe(browserSync.stream());
-}
 
-// Функция для сборки проекта
-function building() {
-	return gulp.src([
-		'app/css/style.min.css',
-		'app/js/main.min.js',
-		'app/**/*.html',
-	], { base: 'app' })
-		.pipe(gulp.dest('dist'));
-}
 
-// Функция для слежения за изменениями
+// File change observer
 function watcher() {
-	gulp.watch(['app/scss/style.scss'], styles);
-	gulp.watch(['app/js/main.js'], scripts);
-	gulp.watch(['app/*.html']).on('change', browserSync.reload);
+	gulp.watch(path.watch.files, copy);
+	gulp.watch(path.watch.html, html);
+	gulp.watch(path.watch.scss, scss);
+	gulp.watch(path.watch.js, js);
+	gulp.watch(path.watch.images, images);
 }
 
-// Функция для инициализации BrowserSync
-function browsersync() {
-	browserSync.init({
-		server: {
-			baseDir: "app/"
-		}
-	});
-}
+export { svgSprive }
 
-// Экспортируем функции
-export { cleanDist as clean }; // Переименовываем для избежания конфликта
-export const build = gulp.series(cleanDist, building); // Сборка с очисткой
-export { styles, scripts, watcher, browsersync, building }; // Экспорт остальных задач
+// sequential font processing
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
+//Main tasks
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
 
-// Задача по умолчанию
-export default gulp.parallel(styles, scripts, browsersync, watcher);
+// Building a task execution scenario
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+
+
+//Executing the default script
+
+export { dev }
+export { build }
+
+
+gulp.task('default', dev);
+
+
