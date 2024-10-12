@@ -1,24 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" href="css/style.min.css?_v=20241007195157">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241012150329">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Main</title>
+	<title>URUS на прокат</title>
 </head>
 
 <body>
 	<header class="header">
-
+	<div class="container">
+		<div class="header__top">
+			<a href="" class="logo">
+				<img src="img/Lamborghini logo.svg" alt="" class="logo__img">
+			</a>
+			<div class="menu">
+				<button class="menu__btn">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</div>
+		<div class="header__content">
+			<h1 class="title">URUS</h1>
+			<picture><source srcset="img/headerUrus.webp" type="image/webp"><img src="img/headerUrus.png" alt="" class="header__images"></picture>
+			<h2 class="subtitle">на прокат</h2>
+		</div>
+	</div>
 </header>
-	<main>
-		
-		
-	</main>
-	<footer class="footer">
+	<section class="info">
+		<div class="container">
+			<h2 class="info__title">
+				Lamborghini Urus
+			</h2>
+			<picture><source srcset="img/urus__info.webp" type="image/webp"><img src="img/urus__info.png" alt="" class="info__img"></picture>
+			<div class="info__content">
+				<dl class="info__list">
+					<div class="info__list-line">
+						<dt>Класс:</dt>
+						<dd>Внедорожники</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Мощность двигателя:</dt>
+						<dd>650 л.с.</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Объем двигателя:</dt>
+						<dd>4.0 литра турбо</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Разгон 0-100:</dt>
+						<dd>3.6 секунды</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Привод: </dt>
+						<dd> полный</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Количество мест:</dt>
+						<dd>5</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Минимальный срок аренды:</dt>
+						<dd>1 сутки</dd>
+					</div>
+				</dl>
+				<div class="order-box">
+					<p class="price">
+						740 $ / сутки
+					</p>
+					<button class="order">ЗАБРОНИРОВАТЬ</button>
+				</div>
+			</div>
+			<div class="info__gallery">
+				<picture><source srcset="img/info__gallary-pic1.webp" type="image/webp"><img src="img/info__gallary-pic1.jpg" alt="" class="info__gallery-item"></picture>
+				<picture><source srcset="img/info__gallary-pic2.webp" type="image/webp"><img src="img/info__gallary-pic2.jpg" alt="" class="info__gallery-item"></picture>
+				<picture><source srcset="img/info__galarry-pic3.webp" type="image/webp"><img src="img/info__galarry-pic3.jpg" alt="" class="info__gallery-item"></picture>
+			</div>
+		</div>
+	</section>
+	<div class="color">
+		<p class="color__text">
+			Выбери цвет
+		</p>
+		<div class="color__gallery">
+			<picture><source srcset="img/color-p-1.webp" type="image/webp"><img src="img/color-p-1.jpg" alt="" class="color__gallery-start"></picture>
+			<div class="color__gallery-box gallery-box">
 
+				<div class="gallery-box__item">
+					<picture><source srcset="img/color-gallery/slide1.webp" type="image/webp"><img src="img/color-gallery/slide1.jpg" alt=""></picture>
+					<p class="gallery-box__text"> Orange</p>
+				</div>
+
+				<div class="gallery-box__item">
+					<picture><source srcset="img/color-gallery/slide2.webp" type="image/webp"><img src="img/color-gallery/slide2.jpg" alt=""></picture>
+					<p class="gallery-box__text">Yellow</p>
+				</div>
+
+				<div class="gallery-box__item">
+					<picture><source srcset="img/color-gallery/slide3.webp" type="image/webp"><img src="img/color-gallery/slide3.jpg" alt=""></picture>
+					<p class="gallery-box__text">White</p>
+				</div>
+				<div class="gallery-box__item">
+					<picture><source srcset="img/color-gallery/slide4.webp" type="image/webp"><img src="img/color-gallery/slide4.jpg" alt=""></picture>
+					<p class="gallery-box__text">Black</p>
+				</div>
+			</div>
+
+			<picture><source srcset="img/color-p-2.webp" type="image/webp"><img src="img/color-p-2.jpg" alt="" class="color__gallery-end"></picture>
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+	<div class="container">
+		<div class="footer__contacts contacts">
+			<div class="contacts__title">
+				Забронировать автомобиль Lamborghini Urus
+			</div>
+			<div class="contacts__box">
+				<div class="contacts__info">
+					<p class="contacts__headtext">Обязательный страховой взнос: 2000 $</p>
+					<p class="contacts__headtext">Личный водитель: по запросу</p>
+					<p class="contacts__text">Мы свяжемся с вами в течение часа для уточнения деталей. Либо забронируйте
+						автомобиль по номеру:</p>
+					<a href="tel:999-99-99" class="phone">999-99-99</a>
+					<p class="contacts__accept-rules">Нажимая кнопку «Подтвердить бронь» вы соглашаетесь с условиями
+						обработки
+						данных</p>
+				</div>
+				<form action="" class="contacts__form form">
+					<input class="form__input" type="text" placeholder="Ваше имя">
+					<input class="form__input" type="text" placeholder="НОМЕР ТЕЛЕФОНА">
+					<input class="form__input" type="text" placeholder="ГОРОД">
+					<button class="order form__order" type="submit">ЗАБРОНИРОВАТЬ</button>
+
+				</form>
+			</div>
+		</div>
+		<footer class="footer__policy">
+			<p class="policy__text">Политика конфиденциальности</p>
+		</footer>
+	</div>
 </footer>
-	<script src="js/app.min.js?_v=20241007195157"></script>
+	<script src="js/app.min.js?_v=20241012150329"></script>
 </body>
 
 </html>

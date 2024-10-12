@@ -1,15 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 @@include('html/head.html',{
-"title":"Main"
+"title":"URUS на прокат"
 })
 
 <body>
 	@@include('html/header.html')
-	<main>
-		
-		
-	</main>
+	<section class="info">
+		<div class="container">
+			<h2 class="info__title">
+				Lamborghini Urus
+			</h2>
+			<img src="@img/urus__info.png" alt="" class="info__img">
+			<div class="info__content">
+				<dl class="info__list">
+					<div class="info__list-line">
+						<dt>Класс:</dt>
+						<dd>Внедорожники</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Мощность двигателя:</dt>
+						<dd>650 л.с.</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Объем двигателя:</dt>
+						<dd>4.0 литра турбо</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Разгон 0-100:</dt>
+						<dd>3.6 секунды</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Привод: </dt>
+						<dd> полный</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Количество мест:</dt>
+						<dd>5</dd>
+					</div>
+					<div class="info__list-line">
+						<dt>Минимальный срок аренды:</dt>
+						<dd>1 сутки</dd>
+					</div>
+				</dl>
+				<div class="order-box">
+					<p class="price">
+						740 $ / сутки
+					</p>
+					<button class="order">ЗАБРОНИРОВАТЬ</button>
+				</div>
+			</div>
+			<div class="info__gallery">
+				<img src="@img/info__gallary-pic1.jpg" alt="" class="info__gallery-item">
+				<img src="@img/info__gallary-pic2.jpg" alt="" class="info__gallery-item">
+				<img src="@img/info__galarry-pic3.jpg" alt="" class="info__gallery-item">
+			</div>
+		</div>
+	</section>
+	<div class="color">
+		<p class="color__text">
+			Выбери цвет
+		</p>
+		<div class="color__gallery">
+			<img src="@img/color-p-1.jpg" alt="" class="color__gallery-start">
+			<div class="color__gallery-box gallery-box">
+
+				<div class="gallery-box__item">
+					<img src="@img/color-gallery/slide1.jpg" alt="">
+					<p class="gallery-box__text"> Orange</p>
+				</div>
+
+				<div class="gallery-box__item">
+					<img src="@img/color-gallery/slide2.jpg" alt="">
+					<p class="gallery-box__text">Yellow</p>
+				</div>
+
+				<div class="gallery-box__item">
+					<img src="@img/color-gallery/slide3.jpg" alt="">
+					<p class="gallery-box__text">White</p>
+				</div>
+				<div class="gallery-box__item">
+					<img src="@img/color-gallery/slide4.jpg" alt="">
+					<p class="gallery-box__text">Black</p>
+				</div>
+			</div>
+
+			<img src="@img/color-p-2.jpg" alt="" class="color__gallery-end">
+		</div>
+
+	</div>
+
+
 	@@include('html/footer.html')
 	<script src="js/app.min.js"></script>
 </body>

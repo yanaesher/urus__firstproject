@@ -3,9 +3,339 @@
 
 //---------------------------------------------------------------------------------------------------
 // Settings for font
-
-$fontsize: 30px; 
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,900&display=swap');
+//---------------------------------------------------------------------------------------------------
+$fontsize: 29px; 
+$fontfamily: "Inter";
 
 body{
+font-family: $fontfamily;
+font-weight: 900;
+line-height: 1.3;
 font-size: $fontsize;
 }
+
+.container {
+  max-width: 1840px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header {
+  background-image: url(@img/headerbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-position: center;
+
+  &__top {
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 122px);
+  }
+
+  &__images {
+    position: absolute;
+    top:35px;
+    left:0;
+    bottom: 0;
+    right:0;
+    margin: auto;
+  }
+}
+
+.title {
+padding-left: 150px;
+font-size: 345px;
+background: linear-gradient(180deg, #000000 0%, #830B02 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+
+line-height: 0.8;
+}
+
+.subtitle {
+font-size: 160px;
+background: linear-gradient(90deg, #FF5017 0%, #000000 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+
+align-self: end;
+padding-bottom: 50px;
+padding-right:75px;
+}
+
+
+
+
+.menu {
+  &__btn {
+    width: 70px;
+    height: 23px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    span{
+      width: 100%;
+      height: 3px;
+      background-color: #FF5017;
+
+    }
+  }
+}
+
+//----------------------info section----------------------------------------------------------------------------
+
+.info {
+	background-color: #F8F8F8;
+	padding: 170px 0;
+	display: flex;
+	flex-direction: column;
+	&__title {
+font-weight: 900;
+font-size: 160px;
+text-transform: uppercase;
+line-height: 0.8;
+color: #13171C;
+text-align: center;
+
+	}
+
+	&__img {
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	&__content {
+		padding-left: 155px;
+		padding-right: 100px;
+		margin-bottom: 170px;
+		display: flex;
+		column-gap: 94px; 
+	}
+
+	&__list {
+		column-count: 2;
+		column-gap: 140px; 
+	}
+
+	&__list-line {
+		margin-bottom: 22px;
+
+font-weight: 900;
+font-size: 24px;
+line-height: 29px;
+text-transform: uppercase;
+color: #13171C;
+flex-grow: 0;
+
+		:last-child{
+			margin-bottom: 0px;
+		}
+		dt, dd{
+			display: inline-block;
+		}
+	}
+
+.info__list-line:last-of-type {
+	margin-bottom: 0px;
+ }
+
+	&__gallery {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+		
+	}
+
+	&__gallery-item {
+border-radius: 20px;
+img{
+	max-width: 100%;
+}
+	}
+}
+
+.price {
+font-weight: 900;
+font-size: 46px;
+text-transform: uppercase;
+color: #13171C;
+margin-bottom: 40px;
+
+}
+.order {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 30px 58px;
+background: linear-gradient(181.77deg, #FF5017 2.24%, #FF6837 99.25%);
+font-size: 24px;
+text-transform: uppercase;
+}
+
+
+
+
+
+//----------------------color section----------------------------------------------------------------------------
+	
+	.color {
+		background-color: #F8F8F8;
+		&__text {
+font-size: 160px;
+text-transform: uppercase;
+color: #13171C;
+text-align: center;
+margin-bottom: 70px;
+		}
+
+		&__gallery {
+			background-color: #13171C;
+		}
+
+		&__gallery-start {
+			width: 100%;
+margin: 0 auto;
+		}
+
+		&__gallery-end {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		
+}
+.gallery-box {
+	padding: 170px 44px;
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+		&__item {
+			img{
+				max-width: 100%;
+border-radius: 20px;
+margin-bottom: 20px;
+			}
+			p{
+font-size: 36px;
+text-align: center;
+text-transform: uppercase;
+color: #FFFFFF;
+			}
+		}
+}
+
+
+
+
+.footer {
+	background-color: #13171C;
+padding: 170px 0 87px 0;
+	color: #FFFFFF;
+	&__policy {
+		 p{
+			text-align: center;
+	font-size: 14px;
+		}
+	}
+}
+
+
+.contacts {
+
+	&__title {
+font-size: 36px;
+text-transform: uppercase;
+color: #FF5017;
+text-align: center;
+margin-bottom: 67px;
+	}
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px 203px;
+		margin-bottom: 114px;
+		padding-left: 300px;
+		padding-right: 153px;
+	}
+
+	&__info {
+		max-width: 565px;
+	}
+
+	&__headtext {
+		color: #BCBCBC;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		margin-bottom: 20px;
+	max-width: 477px;
+	}
+
+	&__accept-rules {
+		margin-top: 77px;
+		font-size: 14px;
+		max-width: 330px;
+	}
+
+}
+
+.phone {
+	color:#FFFFFF;
+
+}
+
+.form {
+flex-basis: 594px;
+	&__input {
+		display: block;
+		width: 100%;
+		margin-bottom: 20px;
+		max-width: 594px;
+		padding: 10px;
+font-size: 24px;
+text-transform: uppercase;
+border-bottom: 1px solid #FFFFFF;
+background-color: transparent;
+color: #FFFFFF;
+&::placeholder{
+	color: #FFFFFF;
+	font-size: 24px;
+}
+&:last-of-type {
+			margin-bottom: 36px;
+		}
+	}
+
+	&__order {
+		width: 100%;
+	}
+}
+
+
+//---------------------------------------------------------------------------------------------------
+// Settings for adaptation 
+
+
+
+
+
+
+
